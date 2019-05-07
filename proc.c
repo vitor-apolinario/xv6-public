@@ -187,7 +187,6 @@ fork(int tickets){
   struct proc *np;
   struct proc *curproc = myproc();
 
-  // cprintf("Fork: %d tickets\n", tickets);
   // Check limits
   if(tickets == 0){
     tickets = MIN;
@@ -327,10 +326,7 @@ wait(void)
 //Generetes a randon number
 int 
 rand(int base){
-  int new = ((214013 * base + 2531011) % 2147483648)/2;
-//  cprintf("New: %d\n", new);
-//  new = new % total;
-//  cprintf("Escolhido: %d\n", new);
+  int new = (1103515245 * base + 12345);
   return new;
 }
 
